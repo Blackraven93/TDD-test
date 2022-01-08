@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <script defer src="../js/index.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
 </head>
 <body>
-    <h1>Set</h1>
+  <div class="container">
+    <section class="calculator">
+      <div class="result">
+        <input readonly type="text" class="total" value="0">
+        <input readonly type="text" class="calculation" value="0">
+        <!-- hover focus  -->
+        <!-- css border & outline & margin 수정 -->
+      </div>
+
+      <div class="buttons">
+        <div class="button__1st">
+          <button type="button" class="btn all-clear">AC</button>
+          <button type="button" class="btn backspace">Back</button>
+          <button type="button" class="btn operator">÷</button>
+        </div>
+
+        <div class="button__2nd">
+          <button type="button" class="btn number">7</button>
+          <button type="button" class="btn number">8</button>
+          <button type="button" class="btn number">9</button>
+          <button type="button" class="btn operator">×</button>
+        </div>
+
+        <div class="button__3rd">
+          <button type="button" class="btn number">4</button>
+          <button type="button" class="btn number">5</button>
+          <button type="button" class="btn number">6</button>
+          <button type="button" class="btn operator">-</button>
+        </div>
+
+        <div class="button__4th">
+          <button type="button" class="btn number">1</button>
+          <button type="button" class="btn number">2</button>
+          <button type="button" class="btn number">3</button>
+          <button type="button" class="btn operator">+</button>
+        </div>
+
+        <div class="button__5th">
+          <button type="button" class="btn number">0</button>
+          <button type="button" class="btn dot">.</button>
+          <button type="button" class="btn operator">=</button>
+        </div>
+      </div>
+    </section>
+<!-- 
+    <section class="calculator-log">
+      <section class="iconwrap-top">
+        <div class="wrap-box">
+          <button type="button" class="btn darkmode">
+            <img src="img/daynight_icon.png" alt="">
+          </button>
+          <button type="button" class="btn res">
+            <img src="img/responsive_icon.png" alt="">
+          </button>
+        </div>
+      </section>
+      <section>
+        <ul class="pre-list"></ul>
+      </section>
+      <section class="iconwrap-bottom">
+        <div class="wrap-box">
+          <button type="button" class="btn trash">
+            <img src="img/trash_icon.png" alt="">
+          </button>
+        </div>
+      </section>
+    </section> -->
+  </div>
 </body>
 </html>

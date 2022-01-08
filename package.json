@@ -32,7 +32,7 @@
     "jest": "^27.4.7",
     "mini-css-extract-plugin": "^2.4.5",
     "prettier": "2.5.0",
-    "sass": "^1.43.5",
+    "sass": "^1.47.0",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.65.0",

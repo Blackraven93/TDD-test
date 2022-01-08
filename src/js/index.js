@@ -18,6 +18,7 @@ let operator = "";
 const init = (btn, input) => {
   const isNumber = btn.classList.contains("number");
   const isOperator = btn.classList.contains("operator");
+
   if (isNumber) {
     if (input.value === "0") {
       // 표시 값이 0이면

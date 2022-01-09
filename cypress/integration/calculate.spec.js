@@ -11,10 +11,10 @@ describe("ui-counter", () => {
     cy.get(".operator").contains("+").click();
     cy.get(".number").contains("7").click();
     cy.get(".number").contains("0").click();
-    cy.get(".operator").contains("×").click();
+    cy.get(".operator").contains("x").click();
     cy.get(".number").contains("2").click();
     cy.get(".operator").contains("=").click();
-    cy.get(".calculation").should("be.visible", "180");
+    cy.get("#calculation").should("be.visible", "180");
   });
 });
 

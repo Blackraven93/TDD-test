@@ -5,7 +5,7 @@ import "../scss/styles.scss";
 
 // keypad
 const keyPad = document.querySelector(".buttons");
-const inputValue = document.querySelector(".calculation");
+const inputValue = document.getElementById(".calculation");
 // btns
 const btns = keyPad.querySelectorAll(".btn");
 
@@ -73,17 +73,21 @@ const init = (btn, input) => {
           previousNumber = "";
           operator = btn.innerText;
           break;
-        case "×":
+        case "x":
           input.value = previousNumber * currentNumber;
           currentNumber = input.value;
           previousNumber = "";
           operator = btn.innerText;
           break;
         case "÷":
-          input.value = Math.floor(previousNumber / currentNumber);
-          currentNumber = input.value;
-          previousNumber = "";
-          operator = btn.innerText;
+          if (currentNumber !== "0") {
+            input.value = Math.floor(previousNumber / currentNumber);
+            currentNumber = input.value;
+            previousNumber = "";
+            operator = btn.innerText;
+          } else {
+            alert("0으로 나눌 수 없습니다.");
+          }
           break;
         case "=":
           switch (operator) {
@@ -100,7 +104,7 @@ const init = (btn, input) => {
               previousNumber = "";
               operator = "";
               break;
-            case "×":
+            case "x":
               previousNumber = previousNumber * currentNumber;
               input.value = previousNumber;
               currentNumber = "";

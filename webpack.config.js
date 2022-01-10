@@ -23,7 +23,7 @@ module.exports = {
   // webpack config
   entry: {
     main: `${JSPATH}/index.js`,
-    app: [`${JSPATH}/Components/app.js`, `${JSPATH}/Components/bpp.js`],
+    app: [`${JSPATH}/Components/Queue.js`, `${JSPATH}/Components/bpp.js`],
   },
   output: {
     filename: "[name].[chunkhash].bundle.js",

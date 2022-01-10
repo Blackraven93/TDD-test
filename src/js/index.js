@@ -5,7 +5,7 @@ import "../scss/styles.scss";
 
 // keypad
 const keyPad = document.querySelector(".buttons");
-const inputValue = document.getElementById(".calculation");
+const inputValue = document.getElementById("calculation");
 // btns
 const btns = keyPad.querySelectorAll(".btn");
 

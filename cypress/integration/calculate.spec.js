@@ -4,7 +4,36 @@ describe("ui-counter", () => {
     // 페이지 접속. 띄워진 서버 port를 작성해주세요.
     cy.visit("/");
   });
-  // 덧셈 곱셈 확인
+
+  it("사이트 렌더링 이후 초기 value 값은 '0'", () => {
+    cy.get("#calculation").should("be.visible", "0")
+  })
+
+  it("value 값이 '0'일 때 (어느 상황에서든) '0'버튼을 누르면 value 값에 변화가 없다.", () => {
+    cy.get(".number").contains("0").click();
+    cy.get("#calculation").should("be.visible", "0")
+  })
+
+  it("value 값이 '0'일 때 0을 제외한 숫자를 누르면 숫자 값으로 변경 된다.", () => {
+    cy.get('.number').contains("1").click()
+    cy.get("#calculation").should("be.visible", "1");
+  })
+
+  it("value 값이 '1'이라면 '9'버튼을 누를 시 결과는 '19'이다.", () => {
+    cy.get(".number").contains("1").click().then(() => {
+      const value = cy.get("#calculation")
+      cy.get(".number").contains("9").click()
+      value.should("be.visible", "19")
+    })
+  })
+
+  it("숫자를 입력하고 연산자 버튼 Click 시 value 값에 변화가 없다.", () => {
+    cy.get('.number').contains("5").click()
+    cy.get('.number').contains("6").click()
+    cy.get(".operator").contains("+").click()
+    cy.get("#calculation").should("be.visible", "56")
+  })
+
   it("20 + 70 * 2 = 180", () => {
     cy.get(".number").contains("2").click();
     cy.get(".number").contains("0").click();

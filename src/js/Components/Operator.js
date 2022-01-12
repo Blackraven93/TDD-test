@@ -1,7 +1,8 @@
 import Calculate from "./Calculate";
 
 export default class Operator extends Calculate {
-  constructor() {
+  constructor(operator) {
     super();
+    this.operator = operator;
   }
 }

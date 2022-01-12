@@ -44,6 +44,15 @@ describe("ui-counter", () => {
     cy.get("#calculation").should("contain.value", "56");
   });
 
+  it("연산식을 누르고 0을 두번 눌러도 value 값에 변화가 없다.", () => {
+    cy.get(".number").contains("7").click();
+    cy.get(".number").contains("8").click();
+    cy.get(".operator").contains("-").click();
+    cy.get(".number").contains("0").click();
+    cy.get(".number").contains("0").click();
+    cy.get("#calculation").should("contain.value", "0");
+  });
+
   it("20 + 70 * 2 = 180", () => {
     cy.get(".number").contains("2").click();
     cy.get(".number").contains("0").click();

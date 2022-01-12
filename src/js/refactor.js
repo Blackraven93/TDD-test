@@ -18,7 +18,7 @@ let previousNumber = "";
 let operator = "";
 
 let { contextList } = new Calculate([]);
-let { numberList } = new Number(contextList);
+let { numberList } = new Number("");
 export const isIncludes = (result) => {
   const _classList = Array.from(event.target.classList);
   return _classList.includes(result);
@@ -34,14 +34,23 @@ export const handleBtnClick = (event) => {
         calculationInput.value = numberList;
       }
     } else {
-      numberList += `${keyPadValue}`;
-      calculationInput.value = numberList;
+      if (numberList !== "") {
+        numberList += `${keyPadValue}`;
+        calculationInput.value = numberList;
+      } else {
+        if (keyPadValue === "0") {
+          calculationInput.value = keyPadValue;
+        } else {
+          numberList = keyPadValue;
+          calculationInput.value = numberList;
+        }
+      }
     }
     // 화면에 표시해주면 끝
   } else if (isIncludes("operator")) {
     if (contextList.length === 0) {
       contextList.push(numberList);
-      numberList = [];
+      numberList = "";
       contextList.push(keyPadValue);
     }
   } else if (isIncludes("backspace")) {
@@ -53,6 +62,7 @@ export const handleBtnClick = (event) => {
     numberList = [];
     calculationInput.value = "0";
   }
+
   return;
 };
 

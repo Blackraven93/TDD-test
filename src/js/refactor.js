@@ -39,13 +39,15 @@ export const handleBtnClick = (event) => {
     }
     // 화면에 표시해주면 끝
   } else if (isIncludes("operator")) {
-    liscalculate._push(keyPadValue);
+    calculate.contextList._push(keyPadValue);
   } else if (isIncludes("backspace")) {
-    liscalculate._push(keyPadValue);
+    calculate.contextList._push(keyPadValue);
   } else if (isIncludes("dot")) {
-    liscalculate._push(keyPadValue);
+    calculate.contextList._push(keyPadValue);
   } else if (isIncludes("all-clear")) {
-    liscalculate._push(keyPadValue);
+    calculate.contextList = [];
+    number.numberList = [];
+    calculationInput.value = "0";
   }
 
   return;

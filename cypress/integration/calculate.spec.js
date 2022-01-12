@@ -30,6 +30,13 @@ describe("ui-counter", () => {
     cy.get("#calculation").should("contain.value", "19");
   });
 
+  it("AC 버튼을 누르면 value = 0 그리고 연산식도 초기화 된다.", () => {
+    cy.get(".number").contains("2").click();
+    cy.get(".number").contains("3").click();
+    cy.get(".all-clear").contains("AC").click();
+    cy.get("#calculation").should("contain.value", "0");
+  });
+
   it("숫자를 입력하고 연산자 버튼 Click 시 value 값에 변화가 없다.", () => {
     cy.get(".number").contains("5").click();
     cy.get(".number").contains("6").click();

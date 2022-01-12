@@ -2,6 +2,7 @@
 export default class Calculate {
   constructor(list) {
     this.contextList = list;
+    this.totalContect = [];
   }
 
   get getList() {

@@ -1,5 +1,5 @@
 import Queue from "../../src/js/Components/Queue";
-
+/* eslint-disable */
 // 모듈 테스트
 let queue = new Queue([1, 2, 3, 4, 5]);
 

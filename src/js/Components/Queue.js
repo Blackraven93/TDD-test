@@ -40,4 +40,20 @@ export default class Queue {
 
     return this._list;
   }
+
+  _clear() {
+    return this._list = []
+  }
+
+  _combine() {
+    let combineString = ""
+    let result = []
+    for (let i = this._list.length - 1; i >= 0; i--) {
+      isNaN(parseInt(this._list[i])) ? result.push(this._list[i]) : (combineString += this._list[i])
+    }
+    result.push(combineString)
+    return result
+  }
 }
+
+

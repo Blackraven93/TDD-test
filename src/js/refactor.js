@@ -1,12 +1,12 @@
 import "../scss/styles.scss";
-import Queue from "./Components/Queue";
+import List from "./Components/List";
 /* eslint-disable */
 // value
 // const totalFomulaBox = document.querySelector(".total");
 
 // keypad
 const keyPad = document.querySelector(".buttons");
-const inputValue = document.getElementById("calculation");
+const value = document.getElementById("calculation");
 // btns
 const btns = keyPad.querySelectorAll(".btn");
 
@@ -16,32 +16,31 @@ const btns = keyPad.querySelectorAll(".btn");
 let currentNumber = "";
 let previousNumber = "";
 let operator = "";
+let list = new List([])
 
-const isIncludes = (result) => {
+export const isIncludes = (result) => {
     const _classList = Array.from(event.target.classList);
     return _classList.includes(result)
 }
 
-const init = (btn, input) => {
-    
-};
 
-const handleBtnClick = (event) => {
+export const handleBtnClick = (event) => {
   event.preventDefault();
-//   const _classList = Array.from(event.target.classList);
-  
+  const keyPadValue = event.target.innerText
   if (isIncludes("number")) {
-    
+    list.length === 0 ? (keyPadValue !== "0" && list._push(keyPadValue)) : list._push(keyPadValue);
+
   } else if (isIncludes("operator")) {
-    
+    list._push(keyPadValue)
   } else if (isIncludes("backspace")) {
-    
+    list._push(keyPadValue)
   } else if (isIncludes("dot")) {
-    
+    list._push(keyPadValue)
   } else if (isIncludes("all-clear")) {
-    
+    list._push(keyPadValue)
   }
   
+  console.log(list.getList)
   return ;
 };
 

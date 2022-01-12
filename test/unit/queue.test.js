@@ -37,4 +37,13 @@ describe("클래스 Queue 테스트", () => {
   test("empty property 확인", () => {
     expect(queue.empty).not.toBe(true);
   });
+
+  test("_clear method 작동 확인", () => {
+    queue._clear()
+    expect(queue.getList).toEqual([]);
+  })
+  test("_show method 작동 확인 (숫자값 끼리 결합해서 출력)", () => {
+    let value = queue._combine();
+    expect(value).toEqual(["54321"]);
+  })
 });

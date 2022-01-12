@@ -1,4 +1,3 @@
-import "../scss/styles.scss";
 /* eslint-disable */
 // value
 // const totalFomulaBox = document.querySelector(".total");
@@ -8,6 +7,10 @@ const keyPad = document.querySelector(".buttons");
 const inputValue = document.getElementById("calculation");
 // btns
 const btns = keyPad.querySelectorAll(".btn");
+
+const operateCheck = (pre, cur, operator) => {
+
+}
 
 // common variables
 // let totalCalculation = "";

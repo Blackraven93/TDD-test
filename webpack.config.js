@@ -22,8 +22,11 @@ module.exports = {
 
   // webpack config
   entry: {
-    main: `${JSPATH}/index.js`,
-    app: [`${JSPATH}/Components/Queue.js`, `${JSPATH}/Components/bpp.js`],
+    main: `${JSPATH}/refactor.js`,
+    app: [
+      `${JSPATH}/Components/Calculate.js`,
+      `${JSPATH}/Components/Number.js`,
+    ],
   },
   output: {
     filename: "[name].[chunkhash].bundle.js",

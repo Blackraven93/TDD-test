@@ -1,12 +1,12 @@
 {
   "name": "tdd",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "build": "webpack --watch",
     "dev": "webpack server --progress",
     "lint": "eslint ./src --fix",
+    "start": "nodemon --exec babel-node ./src/js/refactor.js",
     "test:jest": "jest ./test --watchAll --collect[=true] --logHeapUsage",
     "test:cypress": "cypress open"
   },
@@ -31,6 +31,7 @@
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.7",
     "mini-css-extract-plugin": "^2.4.5",
+    "nodemon": "^2.0.15",
     "prettier": "2.5.0",
     "sass": "^1.47.0",
     "sass-loader": "^12.3.0",

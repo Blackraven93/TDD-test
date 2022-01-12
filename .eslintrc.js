@@ -9,6 +9,11 @@ module.exports = {
   extends: ["eslint-config-tui", "prettier"],
   plugins: ["prettier"],
   rules: {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
   },
 };

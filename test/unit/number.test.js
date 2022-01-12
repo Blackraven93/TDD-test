@@ -9,7 +9,7 @@ describe("클래스 Number 테스트", () => {
   });
 
   test("인스턴스 생성", () => {
-    expect(number.getList).toEqual(["12345"]);
+    expect(number._merge()).toStrictEqual(["12345"]);
   })
 
 });

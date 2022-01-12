@@ -1,12 +1,13 @@
 import "../scss/styles.scss";
 import List from "./Components/List";
+import Number from "./Components/Number"
 /* eslint-disable */
 // value
 // const totalFomulaBox = document.querySelector(".total");
 
 // keypad
 const keyPad = document.querySelector(".buttons");
-const value = document.getElementById("calculation");
+const calculationInput = document.getElementById("calculation");
 // btns
 const btns = keyPad.querySelectorAll(".btn");
 
@@ -28,8 +29,17 @@ export const handleBtnClick = (event) => {
   event.preventDefault();
   const keyPadValue = event.target.innerText
   if (isIncludes("number")) {
-    list.length === 0 ? (keyPadValue !== "0" && list._push(keyPadValue)) : list._push(keyPadValue);
 
+    list._list.length === 0 ? (keyPadValue !== "0" && list._push(keyPadValue)) : list._push(keyPadValue);
+    
+    console.log(list)
+    
+
+
+    // 화면에 표시해주면 끝
+
+    
+    
   } else if (isIncludes("operator")) {
     list._push(keyPadValue)
   } else if (isIncludes("backspace")) {
@@ -40,7 +50,7 @@ export const handleBtnClick = (event) => {
     list._push(keyPadValue)
   }
   
-  console.log(list.getList)
+  
   return ;
 };
 

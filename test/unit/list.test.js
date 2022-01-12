@@ -5,6 +5,7 @@ let list = new List([1, 2, 3, 4, 5]);
 
 describe("클래스 List 테스트", () => {
   beforeEach(() => {
+    
     list = new List([1, 2, 3, 4, 5]);
   });
 
@@ -30,10 +31,6 @@ describe("클래스 List 테스트", () => {
     expect(list.getList).toEqual([1, 2, 3]);
   });
 
-  test("length property 확인", () => {
-    expect(list.length).toBe(5);
-  });
-
   test("empty property 확인", () => {
     expect(list.empty).not.toBe(true);
   });
@@ -42,4 +39,5 @@ describe("클래스 List 테스트", () => {
     list._clear()
     expect(list.getList).toEqual([]);
   })
+
 });

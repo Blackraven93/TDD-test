@@ -9,6 +9,10 @@ const inputValue = document.getElementById("calculation");
 // btns
 const btns = keyPad.querySelectorAll(".btn");
 
+const operateCheck = (pre, cur, operator) => {
+
+}
+
 // common variables
 // let totalCalculation = "";
 let currentNumber = "";

@@ -1,4 +1,3 @@
-import "../scss/styles.scss";
 /* eslint-disable */
 // value
 // const totalFomulaBox = document.querySelector(".total");

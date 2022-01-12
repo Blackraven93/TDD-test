@@ -1,13 +1,8 @@
 import List from "./List";
 
-class Number extends List {
-    constructor() {
-        super()
+export default class Number extends List {
+    constructor(list) {
+        super(list)  
+        this._list = [ this._list.join("") ]
     }
-
-
 }
-
-const number = new Number([1,2,3]);
-
-console.log(number.getList)

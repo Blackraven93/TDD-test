@@ -9,6 +9,7 @@ module.exports = {
   extends: ["eslint-config-tui", "prettier"],
   plugins: ["prettier"],
   rules: {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "prettier/prettier": [
       "error",
       {

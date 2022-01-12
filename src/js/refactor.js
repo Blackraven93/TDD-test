@@ -1,5 +1,6 @@
 import "../scss/styles.scss";
 import Calculate from "./Components/Calculate";
+import Operator from "./Components/Operator";
 import Number from "./Components/Number";
 /* eslint-disable */
 // value
@@ -11,13 +12,7 @@ let calculationInput = document.getElementById("calculation");
 // btns
 const btns = keyPad.querySelectorAll(".btn");
 
-// common variables
-// let totalCalculation = "";
-let currentNumber = "";
-let previousNumber = "";
-let operator = "";
-
-let { contextList } = new Calculate([]);
+let calculate = new Calculate([]);
 let { numberList } = new Number("");
 export const isIncludes = (result) => {
   const _classList = Array.from(event.target.classList);
@@ -48,17 +43,27 @@ export const handleBtnClick = (event) => {
     }
     // 화면에 표시해주면 끝
   } else if (isIncludes("operator")) {
-    if (contextList.length === 0) {
-      contextList.push(numberList);
+    if (calculate.contextList.length === 0) {
+      calculate._push(numberList);
       numberList = "";
-      contextList.push(keyPadValue);
+      calculate._push(keyPadValue);
+    }
+
+    if (keyPadValue === "=") {
+      calculate._push(numberList);
+      let operator = new Operator(calculate.getList); // [15 + 20]
+      console.log(operator);
+      let result = String(operator.calculate());
+      calculationInput.value = result;
+      calculate._clear();
+      numberList = [];
     }
   } else if (isIncludes("backspace")) {
-    contextList.push(keyPadValue);
+    calculate._push(keyPadValue);
   } else if (isIncludes("dot")) {
-    contextList.push(keyPadValue);
+    calculate._push(keyPadValue);
   } else if (isIncludes("all-clear")) {
-    contextList = [];
+    calculate._clear();
     numberList = [];
     calculationInput.value = "0";
   }

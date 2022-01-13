@@ -10,7 +10,7 @@ export default class Calculate {
   }
 
   get empty() {
-    return this._length === 0 && Array.isArray(this.contextList) ? true : false;
+    return this.contextList.length === 0 && Array.isArray(this.contextList) ? true : false;
   }
 
   _push(value) {

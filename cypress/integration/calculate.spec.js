@@ -64,6 +64,17 @@ describe("ui-counter", () => {
     cy.get(".operator").contains("=").click();
     cy.get("#calculation").should("contain.value", "180");
   });
+
+  it("10 / 2 * 5 = 25", () => {
+    cy.get(".number").contains("1").click();
+    cy.get(".number").contains("0").click();
+    cy.get(".operator").contains("÷").click();
+    cy.get(".number").contains("2").click();
+    cy.get(".operator").contains("x").click();
+    cy.get(".number").contains("5").click();
+    cy.get(".operator").contains("=").click();
+    cy.get("#calculation").should("contain.value", "25");
+  });
 });
 
 // it("0으로 나누려고 하면 alert로 경고 메시지를 출력하고, 결과창에는 '오류'를 출력한다.", () => {

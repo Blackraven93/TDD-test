@@ -17,7 +17,7 @@ const btns = keyPad.querySelectorAll(".btn");
 let currentNumber = "";
 let previousNumber = "";
 let operator = "";
-let list = new List([])
+let main = new List([])
 
 export const isIncludes = (result) => {
     const _classList = Array.from(event.target.classList);
@@ -30,9 +30,10 @@ export const handleBtnClick = (event) => {
   const keyPadValue = event.target.innerText
   if (isIncludes("number")) {
 
-    list._list.length === 0 ? (keyPadValue !== "0" && list._push(keyPadValue)) : list._push(keyPadValue);
+
+    main._list.length === 0 ? (keyPadValue !== "0" && main._push(keyPadValue)) : main._push(keyPadValue);
     
-    console.log(list)
+    console.log(main)
     
 
 
@@ -41,13 +42,13 @@ export const handleBtnClick = (event) => {
     
     
   } else if (isIncludes("operator")) {
-    list._push(keyPadValue)
+    main._push(keyPadValue)
   } else if (isIncludes("backspace")) {
-    list._push(keyPadValue)
+    main._push(keyPadValue)
   } else if (isIncludes("dot")) {
-    list._push(keyPadValue)
+    main._push(keyPadValue)
   } else if (isIncludes("all-clear")) {
-    list._push(keyPadValue)
+    main._push(keyPadValue)
   }
   
   

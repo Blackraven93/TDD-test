@@ -70,19 +70,15 @@ export const handleBtnClick = (event) => {
   
         
         numberList = "";
+      } else {
+        calculate._push(numberList);
+        let operator = new Operator(calculate.getList); // [15 + 20]
+        calculationInput.value = String(operator.calculate())
+        calculate._clear();
+        numberList = [];
       }
     }
       
-    if (keyPadValue === "=") {
-      // = 연산자
-      
-      calculate._push(numberList);
-      let operator = new Operator(calculate.getList); // [15 + 20]
-      calculationInput.value = String(operator.calculate())
-      calculate._clear();
-      numberList = [];
-    }
-
   } else if (isIncludes("backspace")) {
     // 0일 때 체크
     calculate._push(keyPadValue);

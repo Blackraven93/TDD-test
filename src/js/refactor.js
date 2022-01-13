@@ -14,6 +14,9 @@ const btns = keyPad.querySelectorAll(".btn");
 
 let calculate = new Calculate([]);
 let { numberList } = new Number("");
+
+
+
 export const isIncludes = (result) => {
   const _classList = Array.from(event.target.classList);
   return _classList.includes(result);
@@ -43,22 +46,43 @@ export const handleBtnClick = (event) => {
     }
     // 화면에 표시해주면 끝
   } else if (isIncludes("operator")) {
+  
     if (calculate.contextList.length === 0) {
       calculate._push(numberList);
-      numberList = "";
       calculate._push(keyPadValue);
-    }
+      numberList = "";
+    } else {
+      // 다른 연산식일 경우
 
+      if ( keyPadValue !== "=") {
+
+        calculate._push(numberList)
+        
+        let operator = new Operator(calculate.getList);
+        
+        calculationInput.value = String(operator.calculate()); // 연산식의 결과를 화면에 출력하고
+        calculate._clear() // 리스트 초기화
+        
+        calculate._push(calculationInput.value) // 계산식과
+        calculate._push(keyPadValue) // 연산자를 다시 넣어주기
+  
+        console.log(calculate.getList)
+        numberList = "";
+      }
+    }
+      
     if (keyPadValue === "=") {
+      // = 연산자
+      
       calculate._push(numberList);
       let operator = new Operator(calculate.getList); // [15 + 20]
-      console.log(operator);
-      let result = String(operator.calculate());
-      calculationInput.value = result;
+      calculationInput.value = String(operator.calculate())
       calculate._clear();
       numberList = [];
     }
+
   } else if (isIncludes("backspace")) {
+    // 0일 때 체크
     calculate._push(keyPadValue);
   } else if (isIncludes("dot")) {
     calculate._push(keyPadValue);
@@ -68,7 +92,7 @@ export const handleBtnClick = (event) => {
     calculationInput.value = "0";
   }
 
-  return;
+  
 };
 
 btns.forEach((btn) => btn.addEventListener("click", handleBtnClick));

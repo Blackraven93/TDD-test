@@ -5,4 +5,8 @@ export default class Number extends Calculate {
     super();
     this.numberList = list;
   }
+
+  get getNumberList () {
+    return this.numberList
+  }
 }

@@ -16,12 +16,21 @@ let calculate = new Calculate([]);
 let { numberList } = new Number("");
 
 
-export const pushToCalculateContext = (calculate, number, keyPadValue) => {
+export const calculatedValue = (calculate, numberList) => {
+  calculate._push(numberList);
+  let operator = new Operator(calculate.getList);
+  calculate._clear();
+  return String(operator.calculate())
+}
+
+export const pushToCalculateContext = (number, keyPadValue) => {
+  // 숫자와 연산식을 실행 컨텍스트에 넣기
   calculate._push(number) 
   calculate._push(keyPadValue) 
 }
 
 export const isIncludes = (result) => {
+  //  operate 판별
   const _classList = Array.from(event.target.classList);
   return _classList.includes(result);
 };
@@ -54,28 +63,20 @@ export const handleBtnClick = (event) => {
     if (calculate.empty) {
       // 실행 컨텍스트가 비어있다면?? (초기상황)
       if (keyPadValue !== "=") {
-        pushToCalculateContext(calculate, numberList, keyPadValue)
+        pushToCalculateContext(numberList, keyPadValue)
         numberList = "";
       } else throw new Error("숫자와 연산식을 입력하고 '=' 연산을 해주세요  ")
     } else {
       // 다른 연산식일 경우
 
       if ( keyPadValue !== "=") {
-
-        calculate._push(numberList)
-        
-        let operator = new Operator(calculate.getList);
-        
-        calculationInput.value = String(operator.calculate()); // 연산식의 결과를 화면에 출력하고
-        calculate._clear() // 리스트 초기화
-        
-        pushToCalculateContext(calculate, calculationInput.value, keyPadValue)        
+        // + - / *
+        calculationInput.value = calculatedValue(calculate, numberList)
+        pushToCalculateContext(calculationInput.value, keyPadValue)        
         numberList = "";
       } else {
-        calculate._push(numberList);
-        let operator = new Operator(calculate.getList); // [15 + 20]
-        calculationInput.value = String(operator.calculate())
-        calculate._clear();
+        // = 인 경우 연산 후 종료
+        calculationInput.value = calculatedValue(calculate, numberList)
         numberList = "";
       }
     }

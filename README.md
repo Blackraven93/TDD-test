@@ -83,13 +83,16 @@
 
 ##### operator class
 
-- [ ] calculate 메소드 연산 정상 작동 테스트
-- [ ] calculate 메소드를 이용해 더하기 연산자를 진행합니다.
-- [ ] calculate 메소드를 이용해 빼기 연산자를 진행합니다.(음수값)
-- [ ] calculate 메소드를 이용해 빼기 연산자를 진행합니다.
-- [ ] calculate 메소드를 이용해 곱하기 연산자를 진행합니다.
-- [ ] calculate 메소드를 이용해 나누기 연산자를 진행합니다.
-- [ ] calculate 메소드를 이용해 나누기 연산자를 진행합니다. (0값으로 나누기)
+- [x] calculate 메소드 연산 정상 작동 테스트
+- [x] calculate 메소드를 이용해 더하기 연산자를 진행합니다.
+- [x] calculate 메소드를 이용해 빼기 연산자를 진행합니다.(음수값)
+- [x] calculate 메소드를 이용해 빼기 연산자를 진행합니다.
+- [x] calculate 메소드를 이용해 곱하기 연산자를 진행합니다.
+- [x] calculate 메소드를 이용해 나누기 연산자를 진행합니다.
+- [x] calculate 메소드를 이용해 나누기 연산자를 진행합니다. (0값으로 나누기)
+- [ ] calculatedValue 함수 테스트
+- [ ] pushToCalculateContext 함수 테스트
+
 
 **Integration**
 - [ ] 소수점 내림
@@ -101,4 +104,5 @@
   - [ ] 한계처리 Message
     - 빼기 & 나누기 가능
     - 더하기 & 곱하기 불가능
+
 

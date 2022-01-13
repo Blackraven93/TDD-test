@@ -1,13 +1,8 @@
-import List from "./List";
+import Calculate from "./Calculate";
 
-export default class Number extends List {
-    constructor(list) {
-        super(list)
-    }
-
-    _merge() {
-        
-        return [this._list.join("")]
-    }
-
+export default class Number extends Calculate {
+  constructor(list) {
+    super();
+    this.numberList = list;
+  }
 }

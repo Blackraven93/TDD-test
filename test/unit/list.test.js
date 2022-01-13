@@ -1,12 +1,11 @@
-import List from "../../src/js/Components/List";
+import Calculate from "../../src/js/Components/Calculate";
 
 // 모듈 테스트
-let list = new List([1, 2, 3, 4, 5]);
+let list = new Calculate([1, 2, 3, 4, 5]);
 
 describe("클래스 List 테스트", () => {
   beforeEach(() => {
-    
-    list = new List([1, 2, 3, 4, 5]);
+    list = new Calculate([1, 2, 3, 4, 5]);
   });
 
   test("인스턴스 생성", () => {
@@ -36,8 +35,7 @@ describe("클래스 List 테스트", () => {
   });
 
   test("_clear method 작동 확인", () => {
-    list._clear()
+    list._clear();
     expect(list.getList).toEqual([]);
-  })
-
+  });
 });
